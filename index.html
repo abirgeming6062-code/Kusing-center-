@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>তাকওয়া কোচিং সেন্টার | Taqwa Coaching Center</title>
+    <style>
+        /* সম্পূর্ণ সাদা ও সবুজ কালার প্যালেট */
+        :root {
+            --primary-green: #006A4E;   /* লোগোর গাঢ় সবুজ */
+            --light-green: #10B981;     /* বাটন ও হাইলাইটের জন্য উজ্জ্বল সবুজ */
+            --hover-green: #059669;     /* বাটনে মাউস নিলে যে সবুজ হবে */
+            --bg-white: #FFFFFF;        /* মূল সাদা ব্যাকগ্রাউন্ড */
+            --section-bg: #F0FDF4;      /* হালকা সবুজ-সাদা মিক্সড ব্যাকগ্রাউন্ড */
+            --text-dark: #1F2937;       /* গাঢ় টেক্সট কালার */
+            --text-light: #FFFFFF;      /* সাদা টেক্সট */
+            --border-color: #E5E7EB;
+        }
+
+        /* বেসিক রিসেট */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* হেডার ও নেভিগেশন বার */
+        header {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* লোগো ইমেজের পারফেক্ট সাইজিং ও গোল সাদা ব্যাকগ্রাউন্ড */
+        .tcc-logo-img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            background-color: var(--bg-white);
+            padding: 4px;
+            border-radius: 50%;
+            border: 2px solid var(--light-green);
+        }
+
+        .logo-text h1 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text p {
+            font-size: 11px;
+            opacity: 0.9;
+            letter-spacing: 1.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* নতুন সবুজ সাইন-ইন বাটন */
+        .btn-login {
+            background-color: var(--light-green);
+            color: var(--text-light) !important;
+            padding: 10px 22px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+        }
+
+        .btn-login:hover {
+            background-color: var(--hover-green) !important;
+        }
+
+        /* হিরো সেকশন (ব্যানার) */
+        .hero {
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135px, #f4fdf7 0%, #ffffff 100%);
+            border-bottom: 4px solid var(--primary-green);
+        }
+
+        .hero-content {
+            max-width: 55%;
+        }
+
+        .hero-content h2 {
+            font-size: 42px;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #4B5563;
+        }
+
+        /* মেইন অ্যাকশন সবুজ বাটন */
+        .btn-cta {
+            background-color: var(--light-green);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .btn-cta:hover {
+            background-color: var(--hover-green);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            max-width: 40%;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 80%;
+            height: auto;
+            filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.05));
+        }
+
+        /* অ্যাডমিন ড্যাশবোর্ড সেকশন ডিজাইন (সবুজ থিম) */
+        .admin-section {
+            padding: 60px 5%;
+            background-color: var(--section-bg);
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .admin-card {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid #D1FAE5;
+        }
+
+        .admin-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #E5E7EB;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #374151;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #D1D5DB;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--light-green);
+        }
+
+        /* সবুজ সাবমিট বাটন */
+        .btn-submit {
+            background-color: var(--light-green);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--hover-green);
+        }
+
+        /* ফিচার সেকশন */
+        .features {
+            padding: 60px 5%;
+            background-color: var(--bg-white);
+            text-align: center;
+        }
+
+        .features h3 {
+            font-size: 28px;
+            color: var(--primary-green);
+            margin-bottom: 40px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary-green);
+            border-left: 1px solid #F3F4F6;
+            border-right: 1px solid #F3F4F6;
+            border-bottom: 1px solid #F3F4F6;
+        }
+
+        /* ফুটার */
+        footer {
+            background-color: #111827;
+            color: #9CA3AF;
+            padding: 30px 5%;
+            text-align: center;
+            font-size: 14px;
+            border-top: 5px solid var(--primary-green);
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            .hero { flex-direction: column; text-align: center; }
+            .hero-content { max-width: 100%; }
+            .hero-image { max-width: 60%; margin-top: 20px; }
+            .admin-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার এবং নেভিগেশন মেনু (সাদা-সবুজ থিম) -->
+    <header>
+        <div class="logo-area">
+            <img src="https://ibb.co" alt="তাকওয়া কোচিং সেন্টার লোগো" class="tcc-logo-img">
+            <div class="logo-text">
+                <h1>তাকওয়া কোচিং সেন্টার</h1>
+                <p>TAQWA COACHING CENTER</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">হোম</a></li>
+                <li><a href="#">কোর্সসমূহ</a></li>
+                <li><a href="#admin-panel">অ্যাডমিন প্যানেল</a></li>
+                <li><a href="#" class="btn-login">লগইন পোর্টাল</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ব্যানার বা হিরো সেকশন -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>শিক্ষা ও তাকওয়ার সমন্বয়ে গড়ি সুন্দর ভবিষ্যৎ</h2>
+            <p>আমাদের দক্ষ শিক্ষক মণ্ডলী এবং আধুনিক ম্যানেজমেন্ট সিস্টেমের মাধ্যমে আপনার সন্তানের পড়ালেখার অগ্রগতি নিশ্চিত করুন।</p>
+        </div>
+        <div class="hero-image">
+            <img src="https://ibb.co" alt="তাকওয়া কোচিং সেন্টার">
+        </div>
+    </section>
+
+    <!-- অ্যাডমিন কন্ট্রোল এবং ডিরেক্ট পোস্ট সিস্টেম -->
+    <section class="admin-section" id="admin-panel">
+        <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 30px;">ম্যানেজমেন্ট ড্যাশবোর্ড (Admin Control)</h2>
+        
+        <div class="admin-grid">
+            <!-- ১. মোবাইল নম্বর দিয়ে নতুন অ্যাডমিন যোগ করার ফর্ম -->
+            <div class="admin-card">
+                <h3>নতুন অ্যাডমিন যুক্ত করুন</h3>
+                <form id="addAdminForm">
+                    <div class="form-group">
+                        <label for="adminName">অ্যাডমিনের নাম:</label>
+                        <input type="text" id="adminName" placeholder="যেমন: শিক্ষক রহিম" required>
+                    </div>
+                    <div class="form-group">
